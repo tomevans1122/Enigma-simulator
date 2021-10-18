@@ -112,6 +112,7 @@ numbered_input = []
 for letter in word_lst:
     numbered_input.append(int(LTN_alphabet[letter]))
 
+# Function to shift rotor positions by desired amount
 def shuffle_to_right(x, y):
     lst = collections.deque(x)
     lst.rotate(y+1)
