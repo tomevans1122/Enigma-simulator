@@ -91,6 +91,9 @@ III = [5, 15, 21, 24, 14, 25, 16, 11, 12, 22, 7, 20, 18, 8, 2, 23, 1, 17, 10, 4,
 IV = [8, 20, 21, 10, 9, 5, 0, 11, 2, 12, 3, 25, 18, 6, 4, 16, 19, 22, 15, 1, 7, 23, 13, 24, 14, 17]
 V = [23, 22, 12, 10, 1, 11, 17, 6, 0, 21, 19, 13, 8, 3, 4, 5, 9, 7, 2, 25, 16, 15, 14, 24, 20, 18]
 
+# turnover positions of each rotor in order
+turnover_positions = [17, 5, 22]
+
 
 # In reality, these are user inputted and changed daily. For simulation arbitrary choice will suffice.
 test_plugboard_vals = [1, 2, 3, 11, 17, 15, 7, 8, 18, 14, 12, 10, 4, 23, 5, 22, 13, 25, 16, 6, 19, 24, 21, 9, 20, 0]
