@@ -46,7 +46,7 @@ class EnigmaProcess(unittest.TestCase):
         # the original enigma machines couldn't encrypt to the same letter, ensure this doesn't happen
         i = 0
         while i < len(Enigma.word_lst):
-            self.assertNotEqual(Enigma.word_lst[i], Enigma.encrypted_lst[i])
+            self.assertNotEqual(Enigma.word_lst[i], Enigma.encrypted_letters[i])
             i += 1
             continue
 
