@@ -131,16 +131,29 @@ while i < len(numbered_input):
         plug1 = test_plugboard_vals[num]
         shuffled_rotor = shuffle_to_right(aligned_rotor1, i)
         rotor1 = shuffled_rotor[plug1]
-        rotor2 = aligned_rotor2[rotor1]
-        rotor3 = aligned_rotor3[rotor2]
-        # now goes through the machine in reverse order
-        reflected_rotor3 = aligned_rotor3[rotor3]
-        reflected_rotor2 = aligned_rotor2[reflected_rotor3]
-        reflected_rotor1 = shuffled_rotor[reflected_rotor2]
-        reflected_plug = test_plugboard_vals[reflected_rotor1]
-        encrypted_lst.append(reflected_plug)
-        i += 1
-        continue
+                if rotor1 == turnover_positions[0]:
+            shifted_second_rotor = shuffle_to_right(aligned_rotor2, 1)
+            turnover_rotor2 = shifted_second_rotor[rotor1]
+            rotor3 = aligned_rotor3[turnover_rotor2]
+            # now goes through the machine in reverse order
+            reflected_rotor3 = aligned_rotor3[rotor3]
+            reflected_rotor2 = turnover_rotor2[reflected_rotor3]
+            reflected_rotor1 = shuffled_rotor[reflected_rotor2]
+            reflected_plug = test_plugboard_vals[reflected_rotor1]
+            encrypted_lst.append(reflected_plug)
+            i += 1
+            continue
+        else:
+            rotor2 = aligned_rotor2[rotor1]
+            rotor3 = aligned_rotor3[rotor2]
+            # now goes through the machine in reverse order
+            reflected_rotor3 = aligned_rotor3[rotor3]
+            reflected_rotor2 = aligned_rotor2[reflected_rotor3]
+            reflected_rotor1 = shuffled_rotor[reflected_rotor2]
+            reflected_plug = test_plugboard_vals[reflected_rotor1]
+            encrypted_lst.append(reflected_plug)
+            i += 1
+            continue
 
 # # Change numbers back into letters
 encrypted_letters = []
